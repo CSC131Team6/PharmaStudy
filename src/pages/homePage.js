@@ -1,39 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./nav.modules.css"
-import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+import "./nav.modules.css";
+import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 
 export default function HomePage() {
-    return ( 
-    <body className = "body">
-        <nav className = "nav">
-        <ul>
-            <titles><CustomLink to= "/Bavaria"> Bavaria</CustomLink></titles>
-        </ul> <ul>
-            <titles><CustomLink to= "/FDA"> FDA</CustomLink></titles>
-        </ul> <ul>
-            <titles><CustomLink to= "/JaneHopkins"> Jane Hopkins</CustomLink></titles>
-        </ul>
-        </nav>
-        <ToggleColorMode />
-        <MissionState />
-    </body>
-    )
+    const [showPopup, setShowPopup] = useState(true);
+
+    const handleOkClick = () => {
+        setShowPopup(false);
+    };
+
+    return (
+        <body className="body">
+            {showPopup && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <h1>Login using the navigation bar</h1>
+                        <button onClick={handleOkClick}>Ok</button>
+                    </div>
+                </div>
+            )}
+            <nav className="nav">
+                <icon>
+                    <img
+                        src="Sac State logo"
+                        src="https://www.csus.edu/NewCSUS2019-global-assets/_internal/images/logo-horizontal.png"
+                    ></img>
+                </icon>
+                <ul>
+                    <titles>
+                        <CustomLink to="/Bavaria"> Bavaria</CustomLink>
+                    </titles>
+                </ul>{" "}
+                <ul>
+                    <titles>
+                        <CustomLink to="/FDA"> FDA</CustomLink>
+                    </titles>
+                </ul>{" "}
+                <ul>
+                    <titles>
+                        <CustomLink to="/JaneHopkins"> Jane Hopkins</CustomLink>
+                    </titles>
+                </ul>
+            </nav>
+            <ms className="ms">
+                <header>Mission Statement:</header>
+            </ms>
+            <text>
+                Quality patient care is our priority. Providing excellent clinical and
+                service quality, offering compassionate care, and supporting research
+                and medical education are essential to our mission. This mission is
+                founded in the ethical and cultural precepts of the Judaic tradition,
+                which inspire devotion to the art and science of healing and to the care
+                we give our patients and staff.
+            </text>
+
+            <div className="imagesp">
+                <img
+                    src="https://media.istockphoto.com/id/1383414110/photo/shot-of-a-group-of-doctors-using-a-digital-tablet-at-work.jpg?b=1&amp;s=170667a&amp;w=0&amp;k=20&amp;c=Vf1ylSNw_S0Pr3RfHl9PSPaUDxPE7G0BVOmOzvHDxdE="
+                    alt="Doctors meeting"
+                    style={{ maxWidth: "50%" }}
+                />
+                <img
+                    src="https://www.grxstatic.com/4f3rgqwzdznj/6htBaxxtTxg7aRcEY808hX/c238d6fc8340bd977e88960d7c38ba71/close_up_doctor_and_patient_with_medicine-1169928112.jpg?format=pjpg&amp;auto=webp"
+                    alt="Drugs"
+                    style={{ maxWidth: "50%" }}
+                />
+            </div>
+        </body>
+    );
 }
 
 function CustomLink({ to, children, ...props }) {
-    const path = window.location.pathname
+    const path = window.location.pathname;
 
     return (
         <li className={path === to ? "active" : ""}>
@@ -41,89 +80,5 @@ function CustomLink({ to, children, ...props }) {
                 {children}
             </Link>
         </li>
-    )
-}
-
-function MissionStatementNOT() {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />
-      </Container>
-    </React.Fragment>
-  );
-}
-
-function MissionState() {
-    return (
-        <React.Fragment>
-            <CssBaseline />
-                <ms className = "ms">
-                <header>Welcome!</header>
-                </ms>
-                <text> Quality patient care is our priority. Providing excellent clinical and service quality, </text>
-                <div/>
-                <text> offering compassionate care, and supporting research and medical education are essential to our mission. </text>
-                <div/>
-                <text> This mission is founded in the ethical and cultural precepts of the Judaic tradition, </text>
-                <div/>
-                <text>which inspire devotion to the art and science of healing and to the care we give our patients and staff. </text>
-            <CssBaseline />
-        </React.Fragment>
-    )
-}
-
-function DarkMode() {
-    const theme = useTheme();
-    const colorMode = React.useContext(ColorModeContext);
-    return (
-        <Box
-        sx={{
-            display: 'flex',
-            width: '100%',
-            alignItems: 'center',
-            justifyContent: 'center',
-            bgcolor: 'background.default',
-            color: 'text.primary',
-            borderRadius: 1,
-            p: 3,
-        }}
-        >
-        {theme.palette.mode} mode
-        <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-        </IconButton>
-        </Box>
-  );
-}
-
-function ToggleColorMode() {
-    const [mode, setMode] = React.useState('light');
-    const colorMode = React.useMemo(
-      () => ({
-        toggleColorMode: () => {
-          setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-        },
-      }),
-      [],
-    );
-  
-    const theme = React.useMemo(
-      () =>
-        createTheme({
-          palette: {
-            mode,
-          },
-        }),
-      [mode],
-    );
-  
-    return (
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <DarkMode />
-        </ThemeProvider>
-      </ColorModeContext.Provider>
     );
 }
