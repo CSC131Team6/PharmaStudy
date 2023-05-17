@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 80vh; /* Adjust the height as needed */
     background-color: #f0f0f0;
 }
 
@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    margin-top: 2rem; /* Moved the title up closer to the nav bar */
 }
 
 .fdaform__container {
@@ -18,7 +19,7 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 2rem;
-    max-width: 500px;
+    max-width: 1200px; /* Adjust the width as needed */
     width: 100%;
 }
 
@@ -75,3 +76,176 @@
         max-width: 400px;
         text-align: center;
     }
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003366;
+    padding: 1rem;
+}
+
+.top-nav__logo {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.top-nav__greeting {
+    color: white;
+    font-size: 1.5rem; /* Adjust the font size as desired */
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+.top-nav__menu li {
+    display: inline-block;
+}
+
+    .top-nav__menu li a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .top-nav__menu li a:hover {
+            background-color: #fff;
+            color: #003366;
+            border-color: #003366;
+        }
+    .top-nav__menu li a,
+    .top-nav__menu li button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: white;
+        background-color: #003366;
+        text-decoration: none;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .top-nav__menu li a:hover,
+        .top-nav__menu li button:hover {
+            background-color: #fff;
+            color: #003366;
+            border-color: #003366;
+        }
+
+.action-button {
+    background-color: #1c2e4a;
+    border: none;
+    color: white;
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+    .action-button:hover {
+        background-color: #0e1a29;
+    }
+
+.patient-table-container {
+    margin-top: 2rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+    .patient-table caption {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .patient-table th,
+    .patient-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    .patient-table th {
+        font-weight: bold;
+        background-color: #f0f0f0;
+    }
+
+    .patient-table tbody tr:nth-child(even) {
+        background-color: #f0f0f0;
+    }
+
+    .patient-table tbody tr:hover {
+        background-color: #e0e0e0;
+    }
+
+.fdaform__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem; /* Increased margin to provide more space */
+}
+
+.fdaform__image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Controls the aspect ratio (4:3) */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fdaform__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.notification-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* Adjust the height as needed */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.notification-box {
+    background-color: #003366;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 400px; /* Adjust the width as needed */
+}
+
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: transparent;
+    border: none;
+    color: #888888;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
