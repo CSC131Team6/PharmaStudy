@@ -1,120 +1,139 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Doppio+One:400|Poppins:700,500");
-/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
-@import url("https://px.animaapp.com/643e2a21c041ac2908222324.643e2a2167f128c8af9edf67.vzfWnHK.rcp.png");
 
-.bavariaform{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-  flex-direction: column;
+.bavariaform {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    flex-direction: column;
+    margin-left: 20px;
 }
 
-.bavariaform input {
-  display: flex;
-  padding: 12px;
-  margin: 12px 0;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 4px #ccc;
-  border-radius: 6px;
-  font-size: 18px;
-  width: 100%;
-}
+    .bavariaform input {
+        display: flex;
+        padding: 12px;
+        margin: 12px 0;
+        font-size: 14px;
+        border: 1px solid white;
+        box-shadow: 0 1px 4px #ccc;
+        border-radius: 6px;
+        font-size: 18px;
+        width: 100%;
+    }
 
-.bavariaform button {
-  background-color: #617398;
-  border: none;
-  color: white;
-  padding: 12px;
-  margin: 12px 0;
-  box-shadow: 0 1px 6px #ccc;
-  width: 100%;
-  border-radius: 6px;
-  font-size: 18px;
-}
 
-.bavariaform .container {
-  box-shadow: 0 1px 6px #ccc;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 400px;
-  padding: 22px;
-}
+    .bavariaform button {
+        background-color: #617398;
+        border: none;
+        color: white;
+        padding: 12px;
+        margin: 12px 0;
+        box-shadow: 0 1px 6px #ccc;
+        width: 100%;
+        border-radius: 6px;
+        font-size: 18px;
+    }
 
-.bavariaform title {
-  display: flex;
-  justify-content: center;
-  border: none;
-  color: black;
-  padding: 12px;
-  width: 100%;
-  font-size: 30px;
-  font-weight: 600;
-}
+    .bavariaform .container {
+        background-color: white;
+        box-shadow: 0 1px 6px #ccc;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        padding: 22px;
+    }
+
+
+    .bavariaform h3 {
+        display: flex;
+        justify-content: center;
+        border: none;
+        color: black;
+        padding: 12px;
+        width: 100%;
+        font-size: 30px;
+        font-weight: 600;
+    }
 
 .container > p {
-  cursor: pointer;
-  margin: 12px;
-}
-
-.form {
-  width: 100%;
+    cursor: pointer;
+    margin: 12px;
 }
 
 .contentFull > h2 {
-  text-align: center;
-}
-
-.form > form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.form > form > p {
-  cursor: pointer;
-}
-
-.error {
-  background-color: tomato;
-  color: white;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-weight: bold;
-  max-width: 400px;
-  margin-bottom: 18px;
+    text-align: center;
 }
 
 .screen a {
-  display: contents;
-  text-decoration: none;
+    display: contents;
+    text-decoration: none;
 }
 
 .container-center-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  pointer-events: none;
-  width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
 }
 
-.container-center-horizontal > * {
-  flex-shrink: 0;
-  pointer-events: auto;
-}
+    .container-center-horizontal > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+    }
 
 .valign-text-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252234;
+    padding: 10px;
+    color: white;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.top-bar-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+    .top-bar-right p {
+        margin-right: 10px;
+    }
+.contentFull {
+    background-color: #333333;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
