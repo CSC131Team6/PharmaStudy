@@ -7,7 +7,7 @@ body {
     padding-top: center;
     align-items: center;
     /*background: url("https://static.vecteezy.com/system/resources/previews/013/866/107/non_2x/abstract-golden-3d-geometric-background-seamless-pattern-for-cover-design-book-design-poster-flyer-website-backgrounds-or-advertising-realistic-illustration-vector.jpg");*/
-    max-width: 1600px;
+    max-width: auto;
     margin: auto;
     text-align: center;
 }
