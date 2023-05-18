@@ -26,6 +26,7 @@ function DoctorContainer() {
         <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
           <jhform form className="jhform">
             <div>
+              <title>Welcome to Jane Hopkins!</title>
               <title>Current User : {user.email}</title>
               <button onClick={logoutUser}>Log out</button>
             </div>
@@ -47,9 +48,10 @@ function PatientContainer() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="100%">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
+        <Box sx={{ bgcolor: '#cfe8fc', height: '110vh' }}>
         <jhform form className="jhform">
           <div>
+            <title>Add Patient</title>
             <Form />
           </div>
         </jhform>
@@ -134,11 +136,9 @@ function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Welcome Doctor! 
         <DoctorContainer />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Add A Patient
         <PatientContainer />
       </TabPanel>
       <TabPanel value={value} index={2}>
