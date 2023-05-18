@@ -30,6 +30,11 @@ function DoctorContainer() {
               <button onClick={logoutUser}>Log out</button>
             </div>
           </jhform>
+          <img
+            src="https://static01.nyt.com/images/2017/02/16/well/doctors-hospital-design/doctors-hospital-design-superJumbo.jpg"              
+            alt="Doctors meeting"
+            style={{ maxWidth: "50%" }}
+          />
           </Box>
       </Container>
     </React.Fragment>
@@ -298,9 +303,9 @@ return(
       <div>
       <TextField
           required
-          id="filled-basic"
-          label="Filled"
-          variants="filled"
+          //id="filled-basic"
+          //label="Filled"
+          //variants="filled"
           defaultValue=""
           color='secondary'
           placeholder='First Name'
