@@ -51,7 +51,7 @@ const rows = [
   createData('Clementine', 'Brandt', '12/12/1990', '1230481253', '450', '189', '120/80', '98', '97', '123094012', '1313 Borne Way', 'null', 'null', 'Hitman', 'Hitman & Co.', 'null', 'null', '5'),
   createData('Tess', 'Lam', '10/23/1985', '123123', '140', '459', '120/80', '98', '97', '123123', '6530 Alone Ave', 'Alegra', 'Cancer', 'Programmer', 'Bluecross.', 'null', 'null', '3'),
   createData('Joji', 'Miller', '05/06/99', '93821392', '6\'4', '143', '120/80', '98', '90', '93203910', '6969 Blank Street', 'Zertek', 'Sars', 'Entertainer', 'Red Cross.', 'null', 'null', '2'),
-  createData('Solaire', 'Astora', '11/17/2002', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '1234 Crayon Way', 'Penicillin', 'null', 'TJMaxx', 'Kaiser', 'null', 'null', '6'),
+  createData('Solaire', 'Astora', '04/26/1993', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '4502 Sunlight Blvd', 'Penicillin', 'Polio', 'Adventurer', 'Sutter', '4503', 'Naproxin', '6'),
 ];
 
 function RealDataPull () {
