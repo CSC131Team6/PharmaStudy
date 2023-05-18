@@ -15,7 +15,7 @@ export default function HomePage() {
             {showPopup && (
                 <div className="popup">
                     <div className="popup-content">
-                        <h1>Login using the navigation bar</h1>
+                        <h1>Welcome to the online portal, powered by Vendia Share. Please login using the navigation bar up above!</h1>
                         <button onClick={handleOkClick}>Ok</button>
                     </div>
                 </div>
@@ -50,8 +50,8 @@ export default function HomePage() {
                 Quality patient care is our priority. Providing excellent clinical and
                 service quality, offering compassionate care, and supporting research
                 and medical education are essential to our mission. This mission is
-                founded in the ethical and cultural precepts of the Judaic tradition,
-                which inspire devotion to the art and science of healing and to the care
+                founded in the ethical & cultural precepts of the Judaic tradition,
+                which inspire devotion to the art and science of healing & to the care
                 we give our patients and staff.
             </text>
 
