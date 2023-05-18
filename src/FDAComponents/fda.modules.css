@@ -227,6 +227,7 @@
 }
 
 .notification-box {
+    color: white;
     background-color: #003366;
     border-radius: 8px;
     padding: 1rem;
@@ -248,4 +249,20 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.contract-modal-content {
+    padding: 20px;
+}
 
+    .contract-modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .contract-modal-content p {
+        margin-bottom: 20px;
+    }
+
+.contract-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
