@@ -10,24 +10,137 @@ import TopBar from "../topBar";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PatientTable from "./JaneHopkins/patientTable";
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+
+function DoctorContainer() {
+  const { user, logoutUser } = useUserContext();
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="100%">
+        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
+          <jhform form className="jhform">
+            <div>
+              <title>Current User : {user.email}</title>
+              <button onClick={logoutUser}>Log out</button>
+            </div>
+          </jhform>
+          </Box>
+      </Container>
+    </React.Fragment>
+  );
+}
+
+function PatientContainer() {
+  const { user, logoutUser } = useUserContext();
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="100%">
+        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
+        <jhform form className="jhform">
+          <div>
+            <Form />
+          </div>
+        </jhform>
+        </Box>
+      </Container>
+    </React.Fragment>
+  );
+}
+
+function ListContainer() {
+  const { user, logoutUser } = useUserContext();
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="100%">
+        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
+          <TestDataPull />
+          <PatientTable />
+        </Box>
+      </Container>
+    </React.Fragment>
+  );
+}
 
 function Dashboard() {
   const { user, logoutUser } = useUserContext();
   return (
     <div>
       <TopBar />
-    <jhform form className="jhform">
-      <div>
-        <title>Email : {user.email}</title>
-        <button onClick={logoutUser}>Log out</button>
-      </div>
-      <div>
-        <TestDataPull />
-        <Form />
-        <PatientTable />
-      </div>
-    </jhform>
+      <BasicTabs />
     </div>
+  );
+}
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+function BasicTabs() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tab label="Doctor Profile" {...a11yProps(0)} />
+          <Tab label="Add Patient Data" {...a11yProps(1)} />
+          <Tab label="Patient List" {...a11yProps(2)} />
+        </Tabs>
+      </Box>
+      <TabPanel value={value} index={0}>
+        Welcome Doctor! 
+        <DoctorContainer />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Add A Patient
+        <PatientContainer />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        List of all Current Patients
+        <ListContainer />
+      </TabPanel>
+    </Box>
   );
 }
 
@@ -185,9 +298,11 @@ return(
       <div>
       <TextField
           required
-          //id="outlined-required"
-          //label="Required"
+          id="filled-basic"
+          label="Filled"
+          variants="filled"
           defaultValue=""
+          color='secondary'
           placeholder='First Name'
           value={firstName}
           onChange={e => setFirstName(e.target.value)}
@@ -287,14 +402,13 @@ return(
           value={currentlyInsured}
           onChange={e => setCI(e.target.value)}
         />
-        <p></p>
-        <h3>Current Medications</h3>
-        <MultiListComponent 
+        <h4>List of Current Medications</h4>
+        <MultiListComponent
           items={currentMedications} 
           setItems={setCurrentMedications} 
           propertyName="medication" 
-          placeholder='Current Medications'>  
-        </MultiListComponent>
+          placeholder='Current Medications'
+        ></MultiListComponent>
         <label>
         ICD Health Codes
         <MultiListComponent 
