@@ -31,13 +31,28 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(fname, lname, dob, inum, hei, wei, bloodp, tempur, os, uuID, addr, curMeds, famHis, curEmp, curIns, icdHC, aller, vis) {
+  return { fname, lname, dob, inum, hei, wei, bloodp, tempur, os, uuID, addr, curMeds, famHis, curEmp, curIns, icdHC, aller, vis };
 }
 
 const rows = [
-  createData('Hello')
-]
+  createData('Jason', 'Borne', '12/12/1990', '1230481253', '450', '189', '120/80', '98', '97', '123094012', '1313 Borne Way', 'null', 'null', 'Hitman', 'Hitman & Co.', 'null', 'null', '5'),
+  createData('Jason', 'cha', '10/23/1985', '123123', '140', '459', '120/80', '98', '97', '123123', '6530 Alone Ave', 'Alegra', 'Cancer', 'Programmer', 'Bluecross.', 'null', 'null', '3'),
+  createData('Ian', 'Brutal', '05/06/99', '93821392', '6\'4', '143', '120/80', '98', '90', '93203910', '6969 Blank Street', 'Zertek', 'Sars', 'Entertainer', 'Red Cross.', 'null', 'null', '2'),
+  createData('Jordyn', 'Rista', '11/17/2002', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '1234 Crayon Way', 'Penicillin', 'null', 'TJMaxx', 'Kaiser', 'null', 'null', '6'),
+  createData('Testing', 'ThisProgram', '12/12/1990', '1230481253', '450', '189', '120/80', '98', '97', '123094012', '1313 Borne Way', 'null', 'null', 'Hitman', 'Hitman & Co.', 'null', 'null', '5'),
+  createData('Danny', 'Devito', '10/23/1985', '123123', '140', '459', '120/80', '98', '97', '123123', '6530 Alone Ave', 'Alegra', 'Cancer', 'Programmer', 'Bluecross.', 'null', 'null', '3'),
+  createData('Jerma', 'Muhdude', '05/06/99', '93821392', '6\'4', '143', '120/80', '98', '90', '93203910', '6969 Blank Street', 'Zertek', 'Sars', 'Entertainer', 'Red Cross.', 'null', 'null', '2'),
+  createData('Flurb', 'Nurb', '11/17/2002', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '1234 Crayon Way', 'Penicillin', 'null', 'TJMaxx', 'Kaiser', 'null', 'null', '6'),
+  createData('Rosalind', 'Hendericks', '12/12/1990', '1230481253', '450', '189', '120/80', '98', '97', '123094012', '1313 Borne Way', 'null', 'null', 'Hitman', 'Hitman & Co.', 'null', 'null', '5'),
+  createData('Jean', 'Fernandez', '10/23/1985', '123123', '140', '459', '120/80', '98', '97', '123123', '6530 Alone Ave', 'Alegra', 'Cancer', 'Programmer', 'Bluecross.', 'null', 'null', '3'),
+  createData('Ellie', 'May', '05/06/99', '93821392', '6\'4', '143', '120/80', '98', '90', '93203910', '6969 Blank Street', 'Zertek', 'Sars', 'Entertainer', 'Red Cross.', 'null', 'null', '2'),
+  createData('Anya', 'Sharp', '11/17/2002', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '1234 Crayon Way', 'Penicillin', 'null', 'TJMaxx', 'Kaiser', 'null', 'null', '6'),
+  createData('Clementine', 'Brandt', '12/12/1990', '1230481253', '450', '189', '120/80', '98', '97', '123094012', '1313 Borne Way', 'null', 'null', 'Hitman', 'Hitman & Co.', 'null', 'null', '5'),
+  createData('Tess', 'Lam', '10/23/1985', '123123', '140', '459', '120/80', '98', '97', '123123', '6530 Alone Ave', 'Alegra', 'Cancer', 'Programmer', 'Bluecross.', 'null', 'null', '3'),
+  createData('Joji', 'Miller', '05/06/99', '93821392', '6\'4', '143', '120/80', '98', '90', '93203910', '6969 Blank Street', 'Zertek', 'Sars', 'Entertainer', 'Red Cross.', 'null', 'null', '2'),
+  createData('Solaire', 'Astora', '11/17/2002', '1230981501', '5\'6', '123', '120/80', '96', '99', '12398471293', '1234 Crayon Way', 'Penicillin', 'null', 'TJMaxx', 'Kaiser', 'null', 'null', '6'),
+];
 
 function RealDataPull () {
   const { entities } = useJaneHopkins();
@@ -57,6 +72,7 @@ function RealDataPull () {
   return (
     <div>
       <ul>{realList}</ul>
+      <ul>{realList.gettingList}</ul>
     </div>
   );
 }
@@ -111,22 +127,47 @@ export default function PatientTable() {
             <StyledTableCell align="right">Insurance Number</StyledTableCell>
             <StyledTableCell align="right">Height</StyledTableCell>
             <StyledTableCell align="right">Weight</StyledTableCell>
+            <StyledTableCell align="right">Blood Pressure</StyledTableCell>
+            <StyledTableCell align="right">Temperature</StyledTableCell>
+            <StyledTableCell align="right">Oxygen Saturation</StyledTableCell>
+            <StyledTableCell align="right">UUID</StyledTableCell>
+            <StyledTableCell align="right">Address</StyledTableCell>
+            <StyledTableCell align="right">Current Medications</StyledTableCell>
+            <StyledTableCell align="right">Family History</StyledTableCell>
+            <StyledTableCell align="right">Current Employment</StyledTableCell>
+            <StyledTableCell align="right">Current Insurance</StyledTableCell>
+            <StyledTableCell align="right">ICD Health Codes</StyledTableCell>
+            <StyledTableCell align="right">Allergies</StyledTableCell>
+            <StyledTableCell align="right">Visits</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {row.lname} {row.fname}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.dob}</StyledTableCell>
+              <StyledTableCell align="right">{row.inum}</StyledTableCell>
+              <StyledTableCell align="right">{row.hei}</StyledTableCell>
+              <StyledTableCell align="right">{row.wei}</StyledTableCell>
+              <StyledTableCell align="right">{row.bloodp}</StyledTableCell>
+              <StyledTableCell align="right">{row.tempur}</StyledTableCell>
+              <StyledTableCell align="right">{row.os}</StyledTableCell>
+              <StyledTableCell align="right">{row.uuID}</StyledTableCell>
+              <StyledTableCell align="right">{row.addr}</StyledTableCell>
+              <StyledTableCell align="right">{row.curMeds}</StyledTableCell>
+              <StyledTableCell align="right">{row.famHis}</StyledTableCell>
+              <StyledTableCell align="right">{row.curEmp}</StyledTableCell>
+              <StyledTableCell align="right">{row.curIns}</StyledTableCell>
+              <StyledTableCell align="right">{row.icdHC}</StyledTableCell>
+              <StyledTableCell align="right">{row.aller}</StyledTableCell>
+              <StyledTableCell align="right">{row.vis}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
+      <RealDataPull />
     </TableContainer>
   );
 }
