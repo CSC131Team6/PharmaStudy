@@ -51,7 +51,7 @@ export default function HomePage() {
                 service quality, offering compassionate care, and supporting research
                 and medical education are essential to our mission. This mission is
                 founded in the ethical & cultural precepts of the Judaic tradition,
-                which inspire devotion to the art and science of healing & to the care
+                which inspire devotion to the science of healing & the care
                 we give our patients and staff.
             </text>
 
